@@ -1,0 +1,8 @@
+spring.datasource.url=jdbc:postgresql://containers-us-west-209.railway.app:7535/railway
+spring.datasource.username=postgres
+spring.datasource.password=mQDZyHQ7VbWCTwSo8o10
+
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
