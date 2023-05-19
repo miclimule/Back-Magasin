@@ -26,12 +26,42 @@ public class HistoTransfere {
 	
 	private LocalDate dateReception;
 	
+	private String uidFacture;
+	
+	private boolean renvoie;
+	
+	private boolean perdu;
+	
+	public String getUidFacture() {
+		return uidFacture;
+	}
+
+	public boolean isPerdu() {
+		return perdu;
+	}
+
+	public void setPerdu(boolean perdu) {
+		this.perdu = perdu;
+	}
+
+	public void setUidFacture(String uidFacture) {
+		this.uidFacture = uidFacture;
+	}
+
 	@ManyToOne
 	@JoinColumn(name = "pointventeid")
 	private PointVente pointvente;
 
 	public HistoTransfere() {
 		super();
+	}
+
+	public boolean isRenvoie() {
+		return renvoie;
+	}
+
+	public void setRenvoie(boolean renvoie) {
+		this.renvoie = renvoie;
 	}
 
 	public HistoTransfere(long id, Laptop laptop, LocalDate dateTransfere, LocalDate dateReception,

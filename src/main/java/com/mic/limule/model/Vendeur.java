@@ -1,11 +1,15 @@
 package com.mic.limule.model;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +27,14 @@ public class Vendeur {
 	@ManyToOne
 	@JoinColumn(name = "pointventeid")
 	private PointVente pointvente;
+
+	public PointVente getPointvente() {
+		return pointvente;
+	}
+
+	public void setPointvente(PointVente pointvente) {
+		this.pointvente = pointvente;
+	}
 
 	public long getId() {
 		return id;
@@ -44,9 +56,24 @@ public class Vendeur {
 		return mdp;
 	}
 
-	public void setMdp(String mdp) {
-		this.mdp = mdp;
+	public void setMdp(String mdp) throws NoSuchAlgorithmException {
+		MessageDigest digest = MessageDigest.getInstance("MD5");
+		byte[] hash = digest.digest(mdp.getBytes());
+        String hexHash = bytesToHex(hash);
+		this.mdp = hexHash;
 	}
+	
+	private static String bytesToHex(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder();
+        for (byte b : bytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+        return hexString.toString();
+    }
 
 	public Vendeur(long id, String nom, String mdp) {
 		super();

@@ -6,3 +6,35 @@ spring.datasource.password=mQDZyHQ7VbWCTwSo8o10
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.ddl-auto=update
+
+<form class="form-inline" role="form" th:action="@{/addmodel}" th:object="${model}" method="post">
+              <h4 class="mb"><i class="fa fa-angle-right"></i>Information laptop model</h4>
+                <div class="form-group">
+                  <label class="sr-only" for="nom">Nom</label>
+                  <input type="text" class="form-control" id="nom" placeholder="Nom" th:field="*{nom}" name="nom">
+                </div>
+                
+                <div class="form-group">
+                  <label class="sr-only" for="nom">processeur</label>
+                  <input type="text" class="form-control" id="processeur" placeholder="processeur" th:field="*{processeur}" name="processeur">
+                </div>
+                
+                <div class="form-group">
+                  <label class="sr-only" for="Marque">Marque</label>
+                  <input type="text" list="laptopOptions" class="form-control" id="Marque" placeholder="Marque" name="Marque">
+                </div>
+                
+                <datalist id="marqueOptions">
+				    <option th:each="marque : ${marques}" th:data-value="${marque.id}" th:value="${marque.nom}"></option>
+				</datalist>
+				
+				<div class="form-group">
+                  <label class="sr-only" for="editor">description</label>
+				  <input type="text" class="form-control" id="nom" placeholder="Nom" th:field="*{description}" name="description">
+					
+                </div>
+				
+                
+                <button type="submit" id="btnSubmit" class="btn btn-theme">Sign in</button>
+              
+              </form>

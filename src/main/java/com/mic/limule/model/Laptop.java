@@ -22,16 +22,58 @@ public class Laptop {
 	
 	private int rom;
 	
-	private int pouce;
+	private float pouce;
 	
 	private String couleur;
 	
 	private float prix;
 	
+	private float prixa;
+	
 	private boolean envente;
 	
 	private boolean vendu;
 	
+	private boolean perdu;
+	
+	private int mois;
+	
+	private int annees;
+	
+	
+	
+	public int getMois() {
+		return mois;
+	}
+
+	public void setMois(int mois) {
+		this.mois = mois;
+	}
+
+	public int getAnnees() {
+		return annees;
+	}
+
+	public void setAnnees(int annees) {
+		this.annees = annees;
+	}
+
+	public float getPrixa() {
+		return prixa;
+	}
+
+	public void setPrixa(float prixa) {
+		this.prixa = prixa;
+	}
+
+	public boolean isPerdu() {
+		return perdu;
+	}
+
+	public void setPerdu(boolean perdu) {
+		this.perdu = perdu;
+	}
+
 	public float getPrix() {
 		return prix;
 	}
@@ -64,11 +106,13 @@ public class Laptop {
 		this.rom = rom;
 	}
 
-	public int getPouce() {
+	
+
+	public float getPouce() {
 		return pouce;
 	}
 
-	public void setPouce(int pouce) {
+	public void setPouce(float pouce) {
 		this.pouce = pouce;
 	}
 

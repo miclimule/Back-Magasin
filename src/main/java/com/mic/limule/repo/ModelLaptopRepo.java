@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.mic.limule.model.ModelLaptop;
 
 public interface ModelLaptopRepo extends JpaRepository<ModelLaptop, Long>{
-
+	ModelLaptop findByNom(String nom);
 }

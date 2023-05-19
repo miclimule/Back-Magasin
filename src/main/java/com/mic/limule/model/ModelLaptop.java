@@ -28,8 +28,19 @@ public class ModelLaptop {
 	
 	private String description;
 	
-	@OneToMany(mappedBy = "modellaptop")
-    private List<Laptop> laptop = new ArrayList<>();
+	private String processeur;
+	
+	
+
+	public String getProcesseur() {
+		return processeur;
+	}
+
+	public void setProcesseur(String processeur) {
+		this.processeur = processeur;
+	}
+
+	
 
 	public ModelLaptop(long id, String nom, Marque marque, String description) {
 		super();

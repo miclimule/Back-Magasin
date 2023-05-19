@@ -25,6 +25,15 @@ public class PointVente {
 	@OneToMany(mappedBy = "pointvente")
     private List<Vendeur> vendeur = new ArrayList<>();
 
+	
+	public List<Vendeur> getVendeur() {
+		return vendeur;
+	}
+
+	public void setVendeur(List<Vendeur> vendeur) {
+		this.vendeur = vendeur;
+	}
+
 	public long getId() {
 		return id;
 	}

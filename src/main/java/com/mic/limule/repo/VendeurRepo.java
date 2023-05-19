@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.mic.limule.model.Vendeur;
 
 public interface VendeurRepo extends JpaRepository<Vendeur, Long>{
-
+	Vendeur findByNom(String nom);
 }
