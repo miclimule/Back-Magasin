@@ -14,4 +14,6 @@ public class HistoRenvoie {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
+	
+	
 }
